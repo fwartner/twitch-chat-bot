@@ -9,7 +9,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/fwartner/live-chat-bot.git"
+        "url": "git+https://github.com/fwartner/twitch-chat-bot.git"
     },
     "keywords": [
         "twitch",
@@ -22,9 +22,9 @@
     "author": "Florian Wartner",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/fwartner/live-chat-bot/issues"
+        "url": "https://github.com/fwartner/twitch-chat-bot/issues"
     },
-    "homepage": "https://github.com/fwartner/live-chat-bot#readme",
+    "homepage": "https://github.com/fwartner/twitch-chat-bot#readme",
     "dependencies": {
         "dotenv": "^10.0.0",
         "esm": "^3.2.25",

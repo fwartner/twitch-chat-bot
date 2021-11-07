@@ -1,7 +1,7 @@
 {
     "name": "Twitch Live-Chat Bot",
     "description": "Chatbot for Twitch",
-    "repository": "https://github.com/fwartner/live-chat-bot",
+    "repository": "https://github.com/fwartner/twitch-chat-bot",
     "logo": "https://node-js-sample.herokuapp.com/node.png",
     "keywords": ["chatbot", "twitch", "chat"],
     "env": {

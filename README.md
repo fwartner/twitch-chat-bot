@@ -9,7 +9,7 @@ Chatbot for Twitch
 Clone the project
 
 ```bash
-  git clone  https://github.com/fwartner/live-chat-bot.git
+  git clone https://github.com/fwartner/twitch-chat-bot.git
 ```
 
 Go to the project directory
@@ -68,4 +68,4 @@ export const BLOCKED_WORDS = [
 
 ## Deploy to Heroku
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/fwartner/live-chat-bot)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/fwartner/twitch-chat-bot)
