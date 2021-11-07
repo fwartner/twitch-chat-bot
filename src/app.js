@@ -1,28 +1,6 @@
-require('dotenv').config()
-
-import * as helpers from './helpers'
 import * as handlers from './handlers'
-const tmi = require('tmi.js')
 import * as constants from './constants'
-
-const options = {
-    options: { debug: true },
-    connection: {
-        reconnect: true,
-        secure: true,
-        timeout: 180000,
-        reconnectDecay: 1.4,
-        reconnectInterval: 1000,
-    },
-    identity: {
-        username: process.env.TWITCH_USERNAME,
-        password: 'oauth:' + process.env.TWITCH_OAUTH
-    },
-    channels: [`${process.env.TWITCH_CHANNEL}`]
-}
-
-const client = new tmi.Client(options)
-
+import client from './client'
 client.connect()
 
 client.on('disconnected', (reason) => {
@@ -72,21 +50,6 @@ client.on('subgift', (channel, username, streakMonths, recipient, methods, users
 client.on('message', (channel, tags, message, self) => {
     handlers.onMessageHandler(channel, tags, message, self)
     checkTwitchChat(tags, message, channel)
-
-    if (helpers.containsUrl(message)) {
-        if (helpers.isTwitchUrl(message)) {
-            client.say(channel, `Twitch URL`)
-        }
-        if (helpers.isGithubUrl(message)) {
-            client.say(channel, `Github URL`)
-        }
-        if (helpers.isTwitterUrl(message)) {
-            client.say(channel, `Twitter URL`)
-        }
-        if (helpers.isYoutubeUrl(message)) {
-            client.say(channel, `Youtube URL`)
-        }
-    }
 
     switch (message.toLowerCase()) {
         case '!commands':

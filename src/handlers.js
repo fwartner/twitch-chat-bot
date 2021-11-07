@@ -1,6 +1,8 @@
+import client from './client'
+
 export function onMessageHandler(channel, userstate, message, self) {
     if (self) return
-        // TODO: Add a message handler here
+        // TODO: Add message handling
 }
 
 export function onDisconnectedHandler(reason) {
@@ -59,7 +61,6 @@ export function resubHandler(channel, username, months, message, userstate, meth
 }
 
 export function subGiftHandler(channel, username, streakMonths, recipient, methods, userstate) {
-
     client.say(channel,
         `Thank you @${username} for gifting a sub to ${recipient}}.`
     )
