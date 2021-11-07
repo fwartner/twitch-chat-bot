@@ -85,7 +85,7 @@ function checkTwitchChat(userstate, message, channel) {
     let shouldSendMessage = false
     shouldSendMessage = constants.BLOCKED_WORDS.some(blockedWord => message.includes(blockedWord))
     if (shouldSendMessage) {
-        client.say(channel, `@${userstate.username}, sorry!  You message was deleted. Reason: Usage of bad words.`)
+        client.say(channel, `@${userstate.username}, sorry!  Your message was deleted. Reason: Usage of bad words.`)
         client.deletemessage(channel, userstate.id)
     }
 }
