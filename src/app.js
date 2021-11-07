@@ -1,5 +1,5 @@
-// require('dotenv').config()
-import { containsUrl, isTwitchUrl, isGithubUrl, isTwitterUrl, isYoutubeUrl } from './helpers'
+require('dotenv').config()
+import * as helpers from './helpers'
 import * as handlers from './handlers'
 const tmi = require('tmi.js')
 import { BLOCKED_WORDS } from './constants'
@@ -15,7 +15,7 @@ const options = {
     },
     identity: {
         username: process.env.TWITCH_USERNAME,
-        password: 'oauth:' + process.env.TWITCH_OAUTH
+        password: process.env.TWITCH_OAUTH
     },
     channels: [`${process.env.TWITCH_CHANNEL}`]
 }
@@ -70,22 +70,22 @@ client.on('subgift', (channel, username, streakMonths, recipient, methods, users
 
 
 client.on('message', (channel, tags, message, self) => {
-    if (self) return;
+    if (self) return
 
     checkTwitchChat(tags, message, channel)
 
-    if (containsUrl(message)) {
-        if (isTwitchUrl(message)) {
-            client.say(channel, `Twitch URL`);
+    if (helpers.containsUrl(message)) {
+        if (helpers.isTwitchUrl(message)) {
+            client.say(channel, `Twitch URL`)
         }
-        if (isGithubUrl(message)) {
-            client.say(channel, `Github URL`);
+        if (helpers.isGithubUrl(message)) {
+            client.say(channel, `Github URL`)
         }
-        if (isTwitterUrl(message)) {
-            client.say(channel, `Twitter URL`);
+        if (helpers.isTwitterUrl(message)) {
+            client.say(channel, `Twitter URL`)
         }
-        if (isYoutubeUrl(message)) {
-            client.say(channel, `Youtube URL`);
+        if (helpers.isYoutubeUrl(message)) {
+            client.say(channel, `Youtube URL`)
         }
     }
 
@@ -96,10 +96,10 @@ client.on('message', (channel, tags, message, self) => {
 
             For more help just type "Help"
             `);
-            break;
+            break
         case '!website':
             client.say(channel, `@${tags.username}, my website is wartner.io!`);
-            break;
+            break
         case '!name':
             client.say(channel, `Hello @${tags.username}, my name is ChatBot! Type "help" to continue...`);
             break;
@@ -110,17 +110,10 @@ client.on('message', (channel, tags, message, self) => {
             !Website: Get my website ||
 
             For more help just ping me up!
-            `);
-            break;
+            `)
+            break
         default:
-            // let mymessage = message.toString();
-            // if ((mymessage.split(' ')[0]).toLowerCase() === '!upvote' || 'upvote') {
-            //     client.say(channel, `TwitchLit @${(mymessage.split(' ')[1] + '_' + mymessage.split(' ')[2])} TwitchLit  you have been UPVOTED by ${ tags.username }`);
-
-            // } else if ((mymessage.split(' ')[0]).toLowerCase() === '!cheer' || 'cheers') {
-            //     console.log(`HSCheers @${(mymessage.split(' ')[1] + '_' + mymessage.split(' ')[2])} HSCheers you have been UPVOTED by ${ tags.username }`);
-            // }
-            break;
+            break
     }
 });
 
@@ -130,9 +123,7 @@ function checkTwitchChat(userstate, message, channel) {
     let shouldSendMessage = false
     shouldSendMessage = BLOCKED_WORDS.some(blockedWord => message.includes(blockedWord))
     if (shouldSendMessage) {
-        // tell user
-        client.say(channel, `@${userstate.username}, sorry!  You message was deleted... Du SCHWUCHTEL`)
-            // delete message
+        client.say(channel, `@${userstate.username}, sorry!  You message was deleted. Reason: Usage of bad words.`)
         client.deletemessage(channel, userstate.id)
     }
 }

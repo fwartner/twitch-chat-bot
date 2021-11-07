@@ -1,5 +1,3 @@
-const tmi = require('tmi.js')
-
 export function onMessageHandler(channel, userstate, message, self) {
     checkTwitchChat(userstate, message, channel)
 }
@@ -64,16 +62,7 @@ export function subGiftHandler(channel, username, streakMonths, recipient, metho
     client.say(channel,
         `Thank you @${username} for gifting a sub to ${recipient}}.`
     )
-
-    // this comes back as a boolean from twitch, disabling for now
-    // "msg-param-sender-count": false
-    // const senderCount =  ~~userstate["msg-param-sender-count"];
-    // client.say(channel,
-    //   `${username} has gifted ${senderCount} subs!`
-    // )
 }
-
-// commands
 
 export function hello(channel, userstate) {
     client.say(channel, `@${userstate.username}, heya!`)
