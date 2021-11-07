@@ -51,3 +51,17 @@ Fill out the required field:
 - TWITCH_OAUTH: The key you just obtained from twitchapps.com
 - TWITCH_CHANNEL: The channel on Twitch you want to interact with
 - WEBSITE: Your website
+
+### Bad Word Filtering
+
+The chatbot can also filter and automatically delete words or messages.
+
+To add words that will be filtered by the bot simply edit the `src/constants.js` file:
+
+```javascript
+...
+export const BLOCKED_WORDS = [
+    'hiphop', // Add more words here..
+]
+...
+```
