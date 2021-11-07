@@ -1,0 +1,38 @@
+{
+    "name": "live-chat-bot",
+    "version": "1.0.0",
+    "description": "Livechat for Streaming",
+    "main": "src",
+    "scripts": {
+        "start": "node .",
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/fwartner/live-chat-bot.git"
+    },
+    "keywords": [
+        "twitch",
+        "youtube",
+        "live",
+        "streaming",
+        "chat",
+        "bot"
+    ],
+    "author": "Florian Wartner",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/fwartner/live-chat-bot/issues"
+    },
+    "homepage": "https://github.com/fwartner/live-chat-bot#readme",
+    "dependencies": {
+        "dotenv": "^10.0.0",
+        "esm": "^3.2.25",
+        "tmi.js": "^1.8.5",
+        "youtube-live-chat": "^1.0.3"
+    },
+    "devDependencies": {
+        "jest": "^27.3.1",
+        "jest-esm-transformer": "^1.0.0"
+    }
+}
