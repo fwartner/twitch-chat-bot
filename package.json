@@ -1,7 +1,7 @@
 {
     "name": "live-chat-bot",
     "version": "1.0.0",
-    "description": "Livechat for Streaming",
+    "description": "Chatbot for Twitch",
     "main": "src",
     "scripts": {
         "start": "node .",
