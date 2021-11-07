@@ -1,8 +1,6 @@
-
 # Twitch Live-Chat Bot
 
 Chatbot for Twitch
-
 
 ## Installation
 
@@ -29,8 +27,6 @@ Start the server
 ```bash
   npm run start
 ```
-
-
 
 ## Configuration
 
