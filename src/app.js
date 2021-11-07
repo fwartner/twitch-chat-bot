@@ -1,6 +1,9 @@
 import * as handlers from './handlers'
 import * as constants from './constants'
 import client from './client'
+import * as dashboard from './dashboard/main'
+
+dashboard.startDashboard()
 client.connect()
 
 client.on('disconnected', (reason) => {
