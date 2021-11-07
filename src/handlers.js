@@ -2,7 +2,7 @@ import client from './client'
 
 export function onMessageHandler(channel, userstate, message, self) {
     if (self) return
-        // TODO: Add message handling
+    client.say(channel, `${userstate.username}: Hello`)
 }
 
 export function onDisconnectedHandler(reason) {
