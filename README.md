@@ -65,3 +65,7 @@ export const BLOCKED_WORDS = [
 ]
 ...
 ```
+
+## Deploy to Heruko
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/fwartner/live-chat-bot)
