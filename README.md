@@ -1,5 +1,5 @@
 
-# Twitch Livechat Bot
+# Twitch Live-Chat Bot
 
 Chatbot for Twitch
 
