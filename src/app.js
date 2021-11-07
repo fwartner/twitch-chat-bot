@@ -91,22 +91,22 @@ client.on('message', (channel, tags, message, self) => {
     switch (message.toLowerCase()) {
         case '!commands':
             client.say(channel, `@${tags.username}, available commands are:
-            C!ommands !Help !Website !Name
+            !commands !help !website
 
             For more help just type "Help"
             `);
             break
         case '!website':
-            client.say(channel, `@${tags.username}, my website is wartner.io!`);
+            client.say(channel, `@${tags.username}, my website is ${constants.WEBSITE}`);
             break
         case '!name':
             client.say(channel, `Hello @${tags.username}, my name is ChatBot! Type "help" to continue...`);
             break;
         case '!help':
-            client.say(channel, `${tags.username}, Use the following commands to get quick help:
-            -> Commands: Get Commands ||
-            Help: Get Help ||
-            !Website: Get my website ||
+            client.say(channel, `${tags.username}, You can use the following command to get help:
+            !commands: Get Commands ||
+            !help: Get Help ||
+            !website: Get my website ||
 
             For more help just ping me up!
             `)
