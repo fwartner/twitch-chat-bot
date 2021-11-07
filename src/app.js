@@ -1,8 +1,9 @@
 require('dotenv').config()
+
 import * as helpers from './helpers'
 import * as handlers from './handlers'
 const tmi = require('tmi.js')
-import { BLOCKED_WORDS } from './constants'
+import * as constants from './constants'
 
 const options = {
     options: { debug: true },
@@ -15,7 +16,7 @@ const options = {
     },
     identity: {
         username: process.env.TWITCH_USERNAME,
-        password: process.env.TWITCH_OAUTH
+        password: 'oauth:' + process.env.TWITCH_OAUTH
     },
     channels: [`${process.env.TWITCH_CHANNEL}`]
 }
@@ -121,7 +122,7 @@ function checkTwitchChat(userstate, message, channel) {
     console.log(message)
     message = message
     let shouldSendMessage = false
-    shouldSendMessage = BLOCKED_WORDS.some(blockedWord => message.includes(blockedWord))
+    shouldSendMessage = constants.BLOCKED_WORDS.some(blockedWord => message.includes(blockedWord))
     if (shouldSendMessage) {
         client.say(channel, `@${userstate.username}, sorry!  You message was deleted. Reason: Usage of bad words.`)
         client.deletemessage(channel, userstate.id)
