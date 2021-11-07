@@ -6,13 +6,31 @@ Chatbot for Twitch
 
 ## Installation
 
-In order to install the chatbot simply follow the steps below:
+Clone the project
 
 ```bash
-  git clone https://github.com/fwartner/live-chat-bot.git
+  git clone  https://github.com/fwartner/live-chat-bot.git
+```
+
+Go to the project directory
+
+```bash
   cd live-chat-bot
+```
+
+Install dependencies
+
+```bash
   npm install
 ```
+
+Start the server
+
+```bash
+  npm run start
+```
+
+
 
 ## Configuration
 
