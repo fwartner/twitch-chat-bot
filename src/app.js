@@ -69,10 +69,8 @@ client.on('subgift', (channel, username, streakMonths, recipient, methods, users
     handlers.subGiftHandler(channel, username, streakMonths, recipient, methods, userstate)
 })
 
-
 client.on('message', (channel, tags, message, self) => {
-    if (self) return
-
+    handlers.onMessageHandler(channel, tags, message, self)
     checkTwitchChat(tags, message, channel)
 
     if (helpers.containsUrl(message)) {

@@ -1,5 +1,6 @@
 export function onMessageHandler(channel, userstate, message, self) {
-    checkTwitchChat(userstate, message, channel)
+    if (self) return
+        // TODO: Add a message handler here
 }
 
 export function onDisconnectedHandler(reason) {
