@@ -1,21 +1,21 @@
 {
-    "name": "Twitch Live-Chat Bot",
-    "description": "Chatbot for Twitch",
-    "repository": "https://github.com/fwartner/twitch-chat-bot",
-    "logo": "https://node-js-sample.herokuapp.com/node.png",
-    "keywords": ["chatbot", "twitch", "chat"],
-    "env": {
-        "TWITCH_USERNAME": {
-            "description": "The username for the chatbot"
-        },
-        "TWITCH_OAUTH": {
-            "description": "The key you just obtained from twitchapps.com"
-        },
-        "TWITCH_CHANNEL": {
-            "description": "The channel on Twitch you want to interact with"
-        },
-        "WEBSITE": {
-            "description": "Your website"
-        }
+  "name": "Twitch Live-Chat Bot",
+  "description": "Chatbot for Twitch",
+  "repository": "https://github.com/fwartner/twitch-chat-bot",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": ["chatbot", "twitch", "chat"],
+  "env": {
+    "TWITCH_USERNAME": {
+      "description": "The username for the chatbot"
+    },
+    "TWITCH_OAUTH": {
+      "description": "The key you just obtained from twitchapps.com"
+    },
+    "TWITCH_CHANNEL": {
+      "description": "The channel on Twitch you want to interact with"
+    },
+    "WEBSITE": {
+      "description": "Your website"
     }
+  }
 }

@@ -1,7 +1,5 @@
-require('dotenv').config()
+require("dotenv").config();
 
-export const BLOCKED_WORDS = [
-    'hiphop',
-]
+export const BLOCKED_WORDS = ["hiphop"];
 
-export const WEBSITE = process.env.WEBSITE
+export const WEBSITE = process.env.WEBSITE;
